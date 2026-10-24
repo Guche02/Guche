@@ -39,15 +39,6 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach((s) => s && navIO.observe(s));
 
-  // Card spotlight follows cursor
-  document.querySelectorAll('.card').forEach((card) => {
-    card.addEventListener('pointermove', (e) => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-      card.style.setProperty('--my', `${e.clientY - r.top}px`);
-    });
-  });
-
   // Terminal typing loop
   const typed = document.getElementById('typed');
   const lines = ['git push origin main', 'pytest -q', 'docker compose up --build', 'echo "let\'s build something"'];
