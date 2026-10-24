@@ -156,14 +156,6 @@ main { width: min(var(--max), calc(100% - 2 * var(--gutter))); margin-inline: au
   display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center;
   min-height: min(88svh, 820px); padding-block: 72px 48px;
 }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 10px; margin: 0 0 24px;
-  padding: 6px 14px 6px 10px; border-radius: 999px; font-size: 13px; color: var(--muted);
-  border: 1px solid var(--border); background: var(--surface);
-}
-.pulse { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-.pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: ping 2s var(--ease) infinite; }
-@keyframes ping { 70%, 100% { transform: scale(2.6); opacity: 0; } }
 
 .hero h1 { font-size: clamp(42px, 5.6vw, 72px); font-weight: 650; }
 .hero h1 em { font-size: 1.08em; }
@@ -265,7 +257,7 @@ main { width: min(var(--max), calc(100% - 2 * var(--gutter))); margin-inline: au
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 56px; }
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
-  .honors-grid, .honors-grid.two-col { grid-template-columns: 1fr; }
+  .honors-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .nav-links { display: none; }
@@ -315,20 +307,16 @@ main { width: min(var(--max), calc(100% - 2 * var(--gutter))); margin-inline: au
 
 /* ---------- Education ---------- */
 .edu-card {
-  display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(20px, 4vw, 48px); padding: clamp(22px, 3vw, 34px);
+  padding: clamp(22px, 3vw, 34px);
   border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface);
 }
 .edu-date { font: 500 13px var(--mono); color: var(--accent); }
 .edu-main h3 { margin-top: 10px; font-size: clamp(20px, 2.2vw, 26px); font-weight: 600; letter-spacing: -0.02em; }
-.edu-school { margin: 8px 0 16px; font: 500 14px var(--mono); color: var(--accent-2); }
-.edu-main p:last-child { margin: 0; color: var(--muted); font-size: 15px; }
-.edu-notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; align-content: start; }
-.edu-notes li { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 15px; color: var(--muted); padding-bottom: 12px; border-bottom: 1px dashed var(--border); }
-.edu-notes li:last-child { border-bottom: 0; padding-bottom: 0; }
+.edu-school { margin: 8px 0 0; font: 500 14px var(--mono); color: var(--accent-2); }
 
 /* ---------- Recognition ---------- */
 .honors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.honors-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+.honors-grid.one-col { grid-template-columns: 1fr; }
 .honor-card { padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); }
 .honor-card h3 { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 16px; }
 .honor-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
@@ -359,6 +347,5 @@ a.post:hover { border-color: var(--accent-border); background: var(--surface-hov
   .tl-item::before { left: 0; top: 6px; }
   .tl-date { padding-top: 0; text-align: left; }
   .tl-body { margin-left: 0; }
-  .edu-card { grid-template-columns: 1fr; }
-  .honors-grid, .honors-grid.two-col { grid-template-columns: 1fr; }
+  .honors-grid { grid-template-columns: 1fr; }
 }
