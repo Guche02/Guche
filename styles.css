@@ -195,18 +195,6 @@ main { width: min(var(--max), calc(100% - 2 * var(--gutter))); margin-inline: au
 .caret { display: inline-block; width: 8px; height: 1.1em; vertical-align: -3px; background: var(--accent); animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* ---------- About ---------- */
-.about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
-.about-text p { font-size: clamp(17px, 1.5vw, 19px); color: var(--muted); margin: 0 0 20px; }
-.facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.facts li {
-  padding: 22px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface);
-  display: grid; gap: 4px; transition: border-color .25s, background .25s;
-}
-.facts li:hover { border-color: var(--accent-border); background: var(--surface-hover); }
-.fact-n { font-size: clamp(26px, 3vw, 34px); font-weight: 650; letter-spacing: -0.03em; }
-.fact-l { font-size: 13px; color: var(--faint); }
-
 /* ---------- Work ---------- */
 .bento { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 1fr; gap: 16px; }
 .card {
@@ -276,7 +264,6 @@ main { width: min(var(--max), calc(100% - 2 * var(--gutter))); margin-inline: au
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 56px; }
-  .about-grid { grid-template-columns: 1fr; }
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
   .honors-grid, .honors-grid.two-col { grid-template-columns: 1fr; }
 }
