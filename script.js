@@ -41,7 +41,7 @@
 
   // Terminal typing loop
   const typed = document.getElementById('typed');
-  const lines = ['git push origin main', 'pytest -q', 'docker compose up --build', 'echo "let\'s build something"'];
+  const lines = ['echo "building impactful products"', 'echo "helping businesses integrate AI"'];
   if (reduceMotion) { typed.textContent = lines[0]; }
   else {
     let li = 0, ci = 0, deleting = false;
